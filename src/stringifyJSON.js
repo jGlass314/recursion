@@ -15,14 +15,10 @@ var stringifyJSON = function(obj) {
     return '';
   var str = '';
   if(Array.isArray(obj)) {
-    str = str.concat('[');
-    str = str.concat(stringify(obj));
-    str = str.concat(']');
+    str = str.concat('[' + str.concat(stringify(obj)) + ']');
   }
   else if(typeof obj === 'object') {
-    str = str.concat('{');
-    str = str.concat(stringify(obj));
-    str = str.concat('}');
+    str = str.concat('{' + str.concat(stringify(obj)) + '}');
   }
   return str;
 };
